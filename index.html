@@ -1,0 +1,235 @@
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Exploitation-Guided Exploration for Semantic Embodied Navigation">
+  <meta name="keywords" content="XGX, embodied-AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last-Mile Embodied Visual Navigation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Exploitation-Guided Exploration for Semantic Embodied Navigation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jbwasse2.github.io/">Justin Wasserman</a><sup>1†</sup>,</span>
+            <span class="author-block">
+              <a href="http://daslab.illinois.edu/">Girish Chowdhary</a><sup>1†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.cs.cmu.edu/~abhinavg/">Abhinav Gupta</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://unnat.github.io/">Unnat Jain</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign,</span>
+            <span class="author-block"><sup>2</sup>Facebook AI Research,</span>
+            <span class="author-block"><sup>3</sup>Carnegie Mellon University</span><br>
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            <span class="author-block"><sup>†</sup>Corresponding Authors</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+
+<!--            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <div class="images">
+        <video id="teaser" autoplay controls muted loop playsinline>
+            <source src="./vids/rollout_real.mp4"
+                    type="video/mp4">
+     </video>
+ <!--     <img src='./images/table.png'> -->
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In the recent progress in embodied navigation and
+            sim-to-robot transfer, modular policies have emerged as a
+            de facto framework. However, there is more to
+            compositionality beyond the decomposition of the learning
+            load into modular components. In this work, we investigate
+            a principled way to syntactically combine these components.
+            Particularly, we propose Exploitation-Guided Exploration
+            (XGX) where separate modules for exploration and
+            exploitation come together in a novel and intuitive manner.
+            We configure the exploitation module to take over in the
+            deterministic final steps of navigation i.e. when the goal
+            becomes visible. Crucially, an exploitation module
+            teacher-forces the exploration module and continues driving
+            an overridden policy optimization. 
+            XGX, with effective decomposition and novel guidance,
+            improves the state-of-the-art performance on the
+            challenging object navigation task from 70% to 73%. Along
+            with better accuracy, through targeted analysis, we show
+            that XGX is also more efficient at goal-conditioned
+            exploration. Finally, we show sim-to-real transfer to robot
+            hardware and XGX performs over two-fold better than the
+            best baseline from simulation benchmarking. 
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- SLING -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">XGX</h2>
+      <img src='./images/motivation_revise_5.jpg' width='1200'>
+      </p>
+ <!--       <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+            <source src="/portfolio/vids/sling/slides2.mp4"
+                    type="video/mp4"> -->
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Results. -->
+<!--<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Results</h2>
+      <img src='/portfolio/images/sling/improv1.svg' width='950'>
+        <h2 class="subtitle has-text-centered">
+        <p style="margin-top:0.5cm;">
+        <span class="dnerf">SLING</span> improves navigation results across all baselines and datasets.
+        </p>
+      </h2>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!--
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Results.
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Results</h2>
+        <p style="margin-top:0.5cm;">
+        <h2 class="title is-4">Last-Mile Navigation Only</h2>
+        <div class="containerhl1">
+          <p>
+          <b>Previous Method:</b> In this real-world last-mile navigation example, the previous method predicted a waypoint (red square in top down map) that was not within 1 meter of the goal (blue square/circle in top down map, visualized in top left corner). Even worst, it caused the robot to hit the corn! Video sped up x3.
+          <br><span style="color: #ff0000">Failure</span>
+          </p>
+        <video id="dollyzoom" autoplay controls muted playsinline width="100%">
+            <source src="/portfolio/vids/nrns.m4v"
+                    type="video/mp4">
+        </video>
+        <br>
+          <p>
+          <b>SLING:</b> However, with SLING, the agent predicted a valid waypoint and was able to navigate towards the goal. Video sped up x3.
+          <br><span style="color: #00b050">Success</span>
+          </p>
+        <video id="dollyzoom" autoplay controls muted playsinline width="100%">
+            <source src="/portfolio/vids/sling.m4v"
+                    type="video/mp4">
+        </video>
+        </div>
+        </p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!--<section class="section" id="BibTeX">
+<p align="left">
+  <div class="containerjw">
+    <h2 class="title">BibTeX</h2>
+    <pre>
+    <code>
+@inproceedings{
+wasserman2022lastmile,
+title={Last-Mile Embodied Visual Navigation},
+author={Justin Wasserman and Karmesh Yadav and Girish Chowdhary and Abhinav Gupta and Unnat Jain},
+booktitle={6th Annual Conference on Robot Learning},
+year={2022},
+url={https://openreview.net/forum?id=RgJwDQwW82y}
+}
+    </code>
+    </pre>
+  </div>
+</p>
+</section> -->
+
+
+<p>
+<a
+  href="https://github.com/nerfies/nerfies.github.io">Website source code</a>
+</p>
+
+
