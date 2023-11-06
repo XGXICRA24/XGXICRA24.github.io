@@ -50,7 +50,7 @@
           <h1 class="title is-1 publication-title">Exploitation-Guided Exploration for Semantic Embodied Navigation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://jbwasse2.github.io/">Justin Wasserman</a><sup>1†</sup>,</span>
+              <a href="https://jbwasse2.github.io/">Justin Wasserman</a><sup>1, 3†</sup>,</span>
             <span class="author-block">
               <a href="http://daslab.illinois.edu/">Girish Chowdhary</a><sup>1†</sup>,
             </span>
@@ -64,13 +64,25 @@
 
           <div class="is-size-6 publication-authors">
             <span class="author-block"><sup>1</sup>University of Illinois at Urbana-Champaign,</span>
-            <span class="author-block"><sup>2</sup>Facebook AI Research,</span>
+            <span class="author-block"><sup>2</sup>FAIR at Meta,</span>
             <span class="author-block"><sup>3</sup>Carnegie Mellon University</span><br>
             <span class="author-block"><sup>†</sup>Corresponding Authors</span>
           </div>
-
           <div class="column has-text-centered">
             <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Jbwasse2/XGX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <hr>
+<!--            </div>
+          </div>
               <!-- PDF Link. -->
 
 <!--            </div>
@@ -86,23 +98,17 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
     <div class="images">
-        <video id="teaser" autoplay controls muted loop playsinline>
-            <source src="./vids/rollout_real.mp4"
+        <video id="teaser" autoplay controls loop playsinline>
+            <source src="/vids/XGX_2min.mp4"
                     type="video/mp4">
      </video>
- <!--     <img src='./images/table.png'> -->
     </div>
-   <!-- <div class="images">
-        <video id="teaser" autoplay controls muted loop playsinline>
-            <source src="./vids/sim_rollout.mp4"
-                    type="video/mp4">
-     </video>
-      <img src='./images/table.png'> -->
     </div> 
     </div>
   </div>
 </section>
 <hr>
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -156,18 +162,70 @@
 </section>
 
 <hr>
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Real World Policy Transfer Behaviors</h2>
-        <h3 class="title is-4">Peeking Behavior</h3>
+        <h1 class="title is-3">Simulation Results</h1>
+        In simulated results using AiHabitat, we acheive state-of-the-art performance on the object-goal task. <br>
+        <img src="./images/table.png" alt="Performance in AiHabitat Object-Goal Task" style="width: 66%;">
+         <br> <br> <br>
+        Furthermore, XGX was more effective at exploring the environment than the previous state-of-the-art baselines.. <br>
+        <img src="./images/explore.png" alt="Performance in AiHabitat Object-Goal Task" style="width: 40%;">
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h1 class="title is-2">Real World Results</h1>
+        <h3 class="title is-4">Robot Morphology</h3>
+        The robot morphology is given below, some notable key features in the wheeled robot include:
+        (1) Four independent trains
+        (2) LIDAR for autonomy and mapping
+        (3) Zero radius turns help us in the policy transfer <br>
+        <img src="./images/robot.png" alt="Robot" style="width: 100%;">
+        <hr>
+        <br><br><br>
+        <h3 class="title is-4">Real-World Object-Goal Navigation Results</h3>
+        XGX outperforms the relevent baselines and performed the best after sim-to-real transfer of the policies. <br>
+        <img src="./images/real_table.png" alt="Performance in AiHabitat Object-Goal Task" style="width: 50%;">
+        <br><br><br>
+        <h3 class="title is-4">Example Real-World Rollout</h3>
+        Below is an example rollout collected in the real-world. The agent needs to arrive the potted plant that is multiple rooms away from the starting location.
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+          <source src="./vids/rollout_real.mp4"
+                  type="video/mp4"> 
+      </video>
+      <br><br><br>
+      <h3 class="title is-4">Without Adjusting for Robot Parameters, Sim-to-Real Fails!</h3>
+      Below is an example rollout where the Pirlnav checkpoint is directly deployed onto our robot. We find that this direct deployment fails due to the sim-to-real gap as well as differences in the physical embodiment of the robot. The object-goal in this example is a chair. <br> 
+      <video id="dollyzoom" autoplay controls muted loop playsinline width="75%">
+        <source src="./vids/pirl_clean.mp4"
+                type="video/mp4"> 
+    </video>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h3 class="title is-4">Real World Policy Sim2Real Transfer: Peeking Behavior</h3>
         Both in simulation (left) and the real world (right), the policy exhibits a "peaking" behavior, where the robot quickly enters a room, looks around, and leaves if there are no semantic cues towards the goal.
         <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
             <source src="./vids/peak.mp4"
                     type="video/mp4"> 
         </video>
-      <h3 class="title is-4">Obstacle Avoidance Behavior</h3>
+        <br><br>
+      <h3 class="title is-4">Real World Policy Sim2Real Transfer: Obstacle Avoidance Behavior</h3>
       Another behavior that transfered was obstacle avoidance. Both in simulation (left) and the real world (right), the robot avoids collisions with obstacles.
       <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
           <source src="./vids/ob_dodge.mp4"
